@@ -221,24 +221,7 @@ for path in subdir_name:
             proc_time.append(time.time()-start + out_time[idx])
             # count += 1
  
-            # VISUALIZING MASK IMAGES (COMMENT THIS SECTION FOR FRCNN)
-            # if output_dict.get('detection_masks') is not None:
-            #   inst_masks = output_dict.get('detection_masks')
-            #   mask_img = np.zeros((height, width, 3), np.uint8)
-            #   label_img = np.zeros((height, width ), np.uint8)
-            #   for j in range(0, inst_masks.shape[0]):
-            #     if scores[j] >= min_score_thresh:
-            #         label_img += inst_masks[j]
-            #   mask_img[label_img > 0] = [255, 255, 255]
-            #   cv2.imwrite(os.path.join(result_mask_path, file), mask_img)
-             
-            # WRITING STATISTICS RESULT
-            # for index, value in enumerate(classes):
-            #     if scores[index] >= min_score_thresh:
-            #         ymin, xmin, ymax, xmax = boxes[index]
-            #         f.write(file + ',' + str(width) + ',' + str(height) + ',crack,' + \
-            #             str(int(xmin * width)) + ',' + str(int(ymin * height)) + ',' + \
-            #             str(int(xmax * width)) + ',' + str(int(ymax * height)) + ',' + str(scores[index]) + '\n')
+
 
         if len(proc_time) != 0:
             mean_batch_time = statistics.mean(proc_time)
